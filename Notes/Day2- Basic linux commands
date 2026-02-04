@@ -1,0 +1,14 @@
+To create a journal entry; open a new file: command ~/30_days_liux/day2_notes.md
+You should type your notes: Day 2: I am learning to edit a file without a mouse. Nano uses shortcuts at the bottom of the screen
+The shortcuts (ctrl+o: write out: (^+o)), then press enter to exit the text editor, and press ctrl+x.
+To make the file a read-only file for everyone's use, use chmod 444, then your text file (.txt)
+In windows you have C:\ and D:\. In linux everything starts from the root (/):
+/home/user: Where your files live
+/etc: Where system settings live
+/bin: Where your commands (like ls) live
+The "Sudo" Power
+Sudo (SuperUser Do). lets you borrow that power for one command
+sudo apt update- Update your package list
+sudo apt install git -y the "install" lets you install tool "-y" is you saying yes
+
+
