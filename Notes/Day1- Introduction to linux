@@ -1,1 +1,30 @@
+Linux is based on the UNIX operating system. UNIX is a powerful, multi-user, multitasking operating system. UNIX laid the foundation for many operating systems, including Linux.
+Linux is free and open source, accessible to everyone.
+This promotes global collaboration and innovation.
+Linux offers efficient performance and strong security.
+It works well across many devices and industries.
+Linux combines a wide range of open-source tools and components to form a complete computing environment. These components include file systems, userinterfaces, system utilities, and application
+programs, all working together to manage hardware and enable users to interact with their computer systems.
+
+DISTRIBUTIONS IN LINUX
+-A Linux distribution is a complete operating system built around the Linux kernel, combined with system software, libraries, and applications.
+It provides users with everything needed to run Linux on different types of devices.
+Major Linux family distribution
+-The Red Hat family- Fedora serves as an upstream testing platform. Widely used by enterprises.
+-The SUSE family- Known for YasT configuration tool and strong enterprise backing. OpenSUSE offers both stable and rolling releases, while the SUSE Linux Enterprise (SLES) is the commercial version for mission-critical applications.
+-Debian family- Known for stability and the APT package manager. Debian is highly stable, suitable for servers and experienced users. Ubuntu is very user-friendly and popular for desktops and cloud
+Linux Mint is based on Ubuntu, designed for ease of use and Windows switchers. Lastly, Kali Linux is specialized for penetration testing and security
+
+Linux terminology and examples
+1. Kernel- This is the brain of the Linux OS. Controls the hardware and makes the hardware interact wth applications. Example: Linux Kernel
+2. Distribution- Collection of software making up a Linux-based OS. Example: Red Hat Enterprise Linux, Fedora, Gentoo, and Ubuntu.
+3. BootLoader- A program that boots the operating system. example: GRUB and ISOLinux.
+4. Service- A program that runs as a background process. Example: httpd-webserver, ftpd-Ftp server, named-name server
+5. File system- Method for storing and organizing files. Examples: ext3, ext4, FAT, XFS, NTFS and Btrfs
+6. The X Window system- It provides the standardd tool kit and protocol to build a graphical user interface on nearly all Linux systems.
+7. Desktop environment- A graphical user interface on top of the operating system example: GNOME, KDE, Xfce, and Fluxbox
+8. Commandline- Interface for typing commands on top of the OS. Shell command line interperter interprets the command line input and instructs the OS to perform any necessary tasks and commands, example: bash
+
+Boot Process
+
 
