@@ -20,11 +20,24 @@ Linux terminology and examples
 2. Distribution- Collection of software making up a Linux-based OS. Example: Red Hat Enterprise Linux, Fedora, Gentoo, and Ubuntu.
 3. BootLoader- A program that boots the operating system. example: GRUB and ISOLinux.
 4. Service- A program that runs as a background process. Example: httpd-webserver, ftpd-Ftp server, named-name server
-5. File system- Method for storing and organizing files. Examples: ext3, ext4, FAT, XFS, NTFS and Btrfs
-6. The X Window system- It provides the standardd tool kit and protocol to build a graphical user interface on nearly all Linux systems.
-7. Desktop environment- A graphical user interface on top of the operating system example: GNOME, KDE, Xfce, and Fluxbox
-8. Commandline- Interface for typing commands on top of the OS. Shell command line interperter interprets the command line input and instructs the OS to perform any necessary tasks and commands, example: bash
+5. File system- Method for storing and organizing files. Examples: ext3, ext4, FAT, XFS, NTFS,
+and Btrfs
+6. The X Window system- It provides the standard toolkit and protocol to build a graphical user interface on nearly all Linux systems.
+7. Desktop environment- A graphical user interface on top of the operating system, example: GNOME, KDE, Xfce, and Fluxbox
+8. Commandline- Interface for typing commands on top of the OS. Shell command line interpreter interprets the command line input and instructs the OS to perform any necessary tasks and commands, for example: bash
 
 Boot Process
+The boot includes:
+-BIOS, this is the first step- When the computer is powered on, the BIOS initializes the screen and keyboard and tests the main memory. This is also referred to as POST (Power on self test). Bios is stored on the RAM chip on the motherboard. The remainder of the boot process is controlled by the OS.
+-Master Boot Record (MBR) and Bootloader- Once POST is completed, the system control passes from the BIOS to the Bootloader. The bootloader is usually stored on one of the hard disks in the system. Either in the Boot sector for traditional BIOS or the EFI partition for more recent or unified extensible firmware
+interfaces or EFI/UFI systems. Upto this stage, the system doesn't access any mass storage media. Thereafter, information on date and time is loaded from the CMOS battery.
+-Kernel Linux OS- When booting Linux, the bootloader is responsible for loading the kernel image and the initial RAM disk or file system into memory. The bootloader in action has two distinct stages:
+ -For systems using the BIOS MBR method- The bootloader resides on the first sector of the hard disk, also known as the master boot record. The size of the MBR is 512 bytes, the bootloader exam is the partition table, and it finds a bootable partition. Once it finds a bootable partition, it then searches for the second-stage bootloader, for
+example, GRUB, and loads it into RAM for systems using the EFI/UFI method. The UEFI firmware reads its boot manager data to determine which UEFI application is to be launched and from where. The firmware then launches the UEFI application, for example, GRUB, to find the boot entry in the firmware's boot manager.
+ -The second stage of the bootloader resides under /boot- A screen is displayed which allows us to choose which OS to boot. After choosing the OS, the bootloader loads the kernel of the selected OS into RAM and passes control to it. Kernels are always compressed. The first job is to uncompress itself. After this, it will check and analyze the system
+hardware and initialize any hardware device drivers built into the kernel.
+
+
+
 
 
