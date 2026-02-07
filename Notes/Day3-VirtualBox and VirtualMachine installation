@@ -1,0 +1,44 @@
+Today, I worked on installing my Virtual Machines using VirtualBox as part of my 30 Days of Linux journey.
+
+Errors & Issues Discovered
+While starting the Ubuntu VM, I encountered performance and boot issues. After investigation, I realized the VM required proper resource allocation to run effectively.
+
+Correct Configuration Settings
+To stabilize the machine, I adjusted the following:
+-Base Memory (RAM):4096 MB
+-Virtual CPU: 2 processors
+-Network Adapter: NAT
+-Video Memory: 128 MB
+
+I also learned that for optimal performance, I should allocate about 50% of my host machine’s resources to the virtual machine — not too low (causes lag) and not too high (affects host OS performance).
+
+Additional Boot Error
+After fixing the resource allocation:
+The VM started, and I could see the Ubuntu crown-like logo. However, the desktop environment was not loading properly
+
+Root Cause
+
+I discovered the issue was caused by Windows Hyper-V and Windows Isolation being enabled, which conflicts with VirtualBox virtualization.
+
+Solution Steps
+
+1. Disabled Hyper-V and Windows Isolation in Windows Features
+2. Restarted my computer
+3. Opened Windows PowerShell (Admin)
+4. Ran the command: bcdedit /set hypervisorlaunchtype off
+5. Restarted the machine again
+6. Launched VirtualBox and started the Ubuntu VM
+
+Outcome
+-Ubuntu VM booted successfully
+-Desktop environment loaded smoothly
+-No more performance or display issues
+
+ Key Takeaways
+
+-Proper resource allocation is critical for VM performance
+-Hyper-V conflicts with VirtualBox virtualization
+-PowerShell commands can resolve low-level virtualization issues
+-Troubleshooting is a major part of system administration and Linux learning
+-The ubuntu iso image boots up the operating system to install it.
+
