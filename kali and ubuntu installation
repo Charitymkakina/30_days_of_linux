@@ -1,0 +1,10 @@
+This repository documents the step-by-step process I use to install Kali Linux and Ubuntu on Oracle VirtualBox.
+It also includes system requirements, configurations, and troubleshooting steps I encountered.
+
+Prerequisites
+Before installation, ensure you have:
+-Oracle VirtualBox installed
+-VirtualBox Extension Pack
+-At least 8 GB RAM (recommended)
+-50 GB free disk space
+-ISO / Pre-built VM files downloaded
