@@ -8,3 +8,67 @@ Before installation, ensure you have:
 -At least 8 GB RAM (recommended)
 -50 GB free disk space
 -ISO / Pre-built VM files downloaded
+
+Kali Linux installation steps
+-Visit the official Kali Linux page and download the VirtualBox image. After unzipping the file, there are .vbox, .vdi, and .vbox files. I will be using the .vdi file.
+
+VirtualBox
+- Click New in VirtualBox
+- Name: Kali Linux
+- Type: Linux/ Version: Debian (64-bit)
+- Memory: Set to at least 2048mb
+- Har disk: This is the crucial step: Select "use an existing virtual hard disk file."
+- Link the. Vdi file:
+   * Click the small folder icon next to the drop-down menu
+   * Click add at the top
+   * Navigate into your kali-linux.2025.4-virtualbox-amd64 folder
+   * Select the file ending with .vdi
+   * Click Open the choose, and finally create.
+
+Before starting your machine, always go back and look at your system settings, adjust where you feel some adjustments are needed.
+
+Ubuntu Installation
+Download Ubuntu ISO
+Download Ubuntu Desktop LTS ISO from the official website
+
+Create New Virtual Machine
+Open VirtualBox
+Click New
+Name: Ubuntu
+Type: Linux
+Version: Ubuntu (64-bit)
+
+Allocate Resources
+Recommended:
+RAM: 4096 MB
+CPU: 2 processors
+Disk: 25–50 GB (VDI, Dynamically allocated)
+
+Attach ISO File
+Go to Settings → Storage
+Under Controller IDE → Add ISO
+Select the Ubuntu ISO file
+
+Start Installation
+Click Start
+Select Install Ubuntu
+Choose:
+Keyboard layout
+Normal installation
+Erase disk & install Ubuntu (Virtual disk only)
+
+Create User Account
+Set:
+Username
+Password
+Computer name
+
+Complete Installation
+Wait for the installation to finish
+Restart VM
+Remove ISO when prompted
+
+
+      
+
+
