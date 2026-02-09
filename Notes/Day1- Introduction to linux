@@ -32,17 +32,30 @@ The boot includes:
 -Master Boot Record (MBR) and Bootloader: Once the POST is completed, system control passes from the firmware (BIOS or UEFI) to the bootloader. To achieve this, the firmware performs its first access of mass storage media to locate the boot code. In legacy BIOS systems, this code is stored in the Master Boot Record (MBR) within the first sector of the disk. 
 In modern UEFI systems, the firmware accesses the EFI System Partition (ESP) to execute a bootloader file (like .efi). Up to this stage, while the hardware has been initialized and the boot sector read, the Operating System itself has not yet been loaded into memory. Thereafter, information on date and time is loaded from the CMOS battery.
 -Kernel Linux OS- When booting Linux, the bootloader is responsible for loading the kernel image and the initial RAM disk or file system into memory. The bootloader in action has two distinct stages:
- -For systems using the BIOS MBR method- The bootloader resides on the first sector of the hard disk, also known as the master boot record. The size of the MBR is 512 bytes, the bootloader exam is the partition table, and it finds a bootable partition. Once it finds a bootable partition, it then searches for the second-stage bootloader, for
-example, GRUB, and loads it into RAM for systems using the EFI/UFI method. The UEFI firmware reads its boot manager data to determine which UEFI application is to be launched and from where. The firmware then launches the UEFI application, for example, GRUB, to find the boot entry in the firmware's boot manager.
+ -For systems using the BIOS MBR method- The bootloader resides on the first sector of the hard disk, also known as the master boot record. The MBR is 512 bytes long; the bootloader examines the partition table and finds a bootable partition. Once it finds a bootable partition, it then searches for the second-stage bootloader, for
+example, GRUB, and loads it into RAM for systems using the EFI/UFI method. The UEFI firmware reads its boot manager data to determine which UEFI application to launch and from where. The firmware then launches the UEFI application, for example, GRUB, to find the boot entry in the firmware's boot manager.
  -The second stage of the bootloader resides under /boot- A screen is displayed which allows us to choose which OS to boot. After choosing the OS, the bootloader loads the kernel of the selected OS into RAM and passes control to it. Kernels are always compressed. The first job is to uncompress itself. After this, it will check and analyze the system
 hardware and initialize any hardware device drivers built into the kernel.
--The initramfs image contains programs and binary files that perform all actions that are needed to mount the proper root file system, like providing kernel functionality. For the needed file system and device drivers for mass storage controllers, with a facility called u-dev for user device, which is responsible for figuring out which devices are present.
+-The initramfs image contains programs and binary files that perform all actions that are needed to mount the proper root file system, like providing kernel functionality. For the needed file system and device drivers for mass storage controllers, with a facility called udev for user device, which is responsible for figuring out which devices are present.
 Locating the device drivers they need to operate properly and loading them. After the root file system has been found, it checks for errors that prevent it from being mounted. The mount program instructs the OS to use a file system that is ready for use and associates it with a particular point in the overall hierarchy of the file system.
 Text-mode login near the end of the boot process, init starts to number the text-mode login prompts. These enable you to type your username, followed by your passwords, and to eventually get a command shell. However, if you are running a system with a graphical login interface, you will not see that at first, the default command shell is bash. But there are a number
 An advanced command shell is available. The shell prints a text prompt indicating it is ready to accept commands after the user types the command and presses Enter. The command is exceuted and another prompt is displayed after the command is done.
 - Linux kernel- The bootloader loads the kernel and initialram base file system into memory, so it can be used directly by the kernel. When the kernel is loaded into RAM, it immediately initializes and configures the computer's memory. It also configures all processors, the IOS subsystems, storage devices, and more. The kernel also loads some necessary user-space applications.
 -/sbin/init and services- Once the kernel has set up and mounted the root file system. The kernel runs the /sbin/init, which then becomes the initial process, which then starts other processes on the system trace their origin ultimately to init. Exceptions include the kernel processes, which are started by the kernel directly, and their job is to manage internal OS details.
 Besides starting the system, Init is responsible for keeping the system running and for shutting it down. Systemd- Systems with systemd start faster than the /sbin/init method. This is largely because it replaces a serialized set of steps with an aggressive parallelization technique, which permits multiple services to be initiated simultaneously. This has been adopted by all major distributions.
+There is systemd on Fedora and systemctl used for basic tasks, for example: to  start, stop, and restart a service using httpd, the Apache webserver as an example, use this command (sudo systemctl start | stop | restart httpd.service) for enabling or disabling a system service from strating up at system boot use sudo systemctl enable | disable httpd.service.
+
+Linux file systems basics
+File systems supported by Linux:
+-Conventional disk file systems (ext3, ext4, xfs, Btrfs)
+-Flash storage filesystems (Ubifs, JFFS2, YAFFS, etc)
+-Database file systems
+-Special purpose filesystems (Procfs, sysfs,tmpfs,squashfs)
+
+Partition and Filesystems
+Partition- is a physically contiguous section of a disk, while a File system is a method of storing or finding files on a hard disk, usually in a partition.
+                                   
+
 
 
 
