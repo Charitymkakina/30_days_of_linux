@@ -1,0 +1,85 @@
+Kali Linux & Metasploitable 2 Virtual Lab Setup
+
+This lab demonstrates the deployment of a cybersecurity testing environment using Kali Linux (Attacker Machine) and Metasploitable 2 (Vulnerable Victim Machine) inside Oracle VirtualBox.
+Tools Used: VirtualBox, Kali Linux, Metasploitable 2, Nmap, Metasploit
+
+Kali Linux Configuration
+OS: Linux
+Version: Debian
+RAM: 2GB
+CPU: 2 Cores
+Network 1 adapter: NAT
+Network 2 adapter: Host-only
+video memory:128mb
+
+Metasploitable 2 Configuration
+OS: Linux
+OS Distribution: Debian
+Version: Debian 32-bit
+RAM: 1GB (Metasploitable is lightweight)
+CPU: 1 Core
+Network: Host only Adapter
+
+Step 1 — Download Metasploitable 2
+Download from Offensive Security: Metasploitable 2 VirtualBox image (ZIP)
+Extract to obtain: Metasploitable.vmdk
+
+Step 2 — Create Metasploitable VM
+1. Open VirtualBox
+2. Click New
+3. Configure:
+-Name: Metasploitable
+-Type: Linux
+-Distribution: Debian
+-Version: 32‑bit
+4. Allocate RAM → 512–1024 MB
+5. Choose: Use the existing virtual hard disk file
+6. Select Metasploitable.vmdk.
+7. Finish setup
+
+Step 3 — Configure Network
+Kali Linux
+Adapter 1 → NAT
+Adapter 2 → Host‑Only Adapter
+
+Metasploitable
+Adapter 1 → Host‑Only Adapter
+
+Step 4 — Start Metasploitable
+Boot the VM.
+Login credentials:
+username: msfadmin
+password: msfadmin
+
+Step 5 — Obtain Victim IP
+Inside Metasploitable run: ifconfig
+Example output: inet: 192.168.56.101- This is the target IP.
+
+Step 6 — Test Connectivity
+From Kali: bash ping 192.168.56.101
+Stop ping: Ctrl + C
+Step 7 — Network Discovery
+bash- nmap -sn 192.168.56.0/24
+
+Step 8 — Service Enumeration
+bash- nmap -sV 192.168.56.101
+This reveals vulnerable services such as:
+* FTP
+* SSH
+* Telnet
+* SMB
+* Apache Web Server
+* MySQL
+
+Step 9 — Access Vulnerable Web Apps
+Open in Kali browser: http://192.168.56.101
+Common applications:
+* DVWA
+* Mutillidae
+* phpMyAdmin
+* TWiki
+
+Safety Notice
+This lab is intentionally vulnerable.
+Do NOT expose Metasploitable to the public internet.
+Use Host‑Only networking only for safe practice.
