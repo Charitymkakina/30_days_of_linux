@@ -1,0 +1,17 @@
+sudo apt update
+sudo apt install --reinstall man-db groff
+sudo mandb
+man man
+pwd
+ls -a (Lists all files, whether hidden or not)
+clear
+mkdir
+cat learning notes_txt
+rmdir - removes directory if empty
+rmdir -p() - removes a directory that has contents inside
+nmap -sn <target-ip> checks if the target is alive, for example, nmap -sn 192.168.56.101
+nmap -sV <target-ip> service version detection
+nmap -sC -sV -O -p- <target-ip> full scan
+
+
+
