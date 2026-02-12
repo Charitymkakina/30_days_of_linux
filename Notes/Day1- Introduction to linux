@@ -13,7 +13,7 @@ Major Linux family distribution
 -The Red Hat family- Fedora serves as an upstream testing platform. Widely used by enterprises.
 -The SUSE family- Known for the YaST configuration tool and strong enterprise backing. OpenSUSE offers both stable and rolling releases, while the SUSE Linux Enterprise (SLES) is the commercial version for mission-critical applications.
 -Debian family- Known for stability and the APT package manager. Debian is highly stable, suitable for servers and experienced users. Ubuntu is very user-friendly and popular for desktops and cloud
-Linux Mint is based on Ubuntu, designed for ease of use and Windows switchers. Lastly, Kali Linux is specialized for penetration testing and cybersecurity
+Linux Mint is based on Ubuntu, designed for ease of use and Windows switchers. Lastly, Kali Linux specializes in penetration testing and cybersecurity
 
 Linux terminology and examples
 1. Kernel- This is the brain of the Linux OS. Controls the hardware and makes the hardware interact wth applications. Example: Linux Kernel
@@ -50,17 +50,15 @@ File systems supported by Linux:
 -Conventional disk file systems (ext3, ext4, xfs, Btrfs)
 -Flash storage filesystems (Ubifs, JFFS2, YAFFS, etc)
 -Database file systems
--Special purpose filesystems (Procfs, sysfs,tmpfs,squashfs)
+-Special-purpose filesystems (Procfs, sysfs,tmpfs,squashfs)
 
 Partition and Filesystems
-Partition- is a physically contiguous section of a disk, while a File system is a method of storing or finding files on a hard disk, usually in a partition.
-                                   
+A partition is a physically contiguous section of a disk, while a File system is a method of storing or finding files on a hard disk, usually in a partition.
+A filesystem is a method of storing or finding files on a hard disk. 
+By partitioning a disk, data can be separated as needed. When a failure or damage occurs on a partition, only the data in that partition is affected while the data on other partitions will likely survive.
 
+The boot process has  multiple steps:
+ - Bios which triggers the bootloader to start the Linux Kernel.
+ -Initramfs, when invoked it triggers the init program to complete the startup process.
 
-
-
-
-
-
-
-
+Remember: Match your needs to the distribution capabilities.                            
