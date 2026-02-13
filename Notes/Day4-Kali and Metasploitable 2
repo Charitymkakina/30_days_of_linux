@@ -28,7 +28,7 @@ Step 2 — Create Metasploitable VM
 1. Open VirtualBox
 2. Click New
 3. Configure:
--Name: Metasploitable
+-Name: Metasploitable 2
 -Type: Linux
 -Distribution: Debian
 -Version: 32‑bit
@@ -45,7 +45,7 @@ Adapter 2 → Host‑Only Adapter
 Metasploitable
 Adapter 1 → Host‑Only Adapter
 
-Step 4 — Start Metasploitable
+Step 4 — Start Metasploitable 2
 Boot the VM.
 Login credentials:
 username: msfadmin
