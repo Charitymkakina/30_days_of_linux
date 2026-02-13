@@ -55,10 +55,19 @@ File systems supported by Linux:
 Partition and Filesystems
 A partition is a physically contiguous section of a disk, while a File system is a method of storing or finding files on a hard disk, usually in a partition.
 A filesystem is a method of storing or finding files on a hard disk. 
-By partitioning a disk, data can be separated as needed. When a failure or damage occurs on a partition, only the data in that partition is affected while the data on other partitions will likely survive.
+By partitioning a disk, data can be separated as needed. When a failure or damage occurs on a partition, only the data in that partition is affected, while the data on other partitions will likely survive.
 
 The boot process has  multiple steps:
  - Bios which triggers the bootloader to start the Linux Kernel.
- -Initramfs, when invoked it triggers the init program to complete the startup process.
+ -Initramfs, when invoked, triggers the init program to complete the startup process.
 
 Remember: Match your needs to the distribution capabilities.                            
+
+GRAPHICAL BASED NOTES.
+GNOME- This is the popular desktop and graphical user interface that runs on top of the Linux OS
+GDM- The default display manager that presents the user with a login screen, which prompts the user for a username and password. Remember, logging out kills processes and goes to the login. A user can switch between sessions.
+Suspending puts the computer into sleep mode. Every task has a default application, and every user has a home directory.
+A user can control basic configurations with system settings. Linux systems generally use Coordinated Universal Time (UTC) for the internal system clock, logs, and hardware clock (RTC) to avoid issues with daylight saving time and time zone shifts.
+The display panel configures screens while the Network manager configures network settings.
+dpkg and RPM are popular package management systems used in Linux distributions. The Debian distribution uses dpkg and apt-based utilities for package management.
+RPM was developed by Red Hat and adopted by many distributions, such as OpenSUSE, CentOS, and others.
