@@ -1,0 +1,9 @@
+Linux User Creation
+sudo adduser <username>, for example, sudo adduser charity
+When an admin wants to add them to the sudo group: sudo usermod-aG sudo username
+sudo useradd -m -s /bin/bash username meaning: -m creates home directory, and -s /bin/bash defines the path to the user's default login shell.
+setting/changing password- sudo passwd <username>. The machine will ask for your admin password first, then it will ask for the username's new password twice
+Deleting user- sudo deluser username, this command keeps the home directory.
+The command sudo deluser- removes home username (it deletes everything).
+To list all users: cat/etc/passwd (view user database)
+                   cut-d: f1 /etc/passwd is used in Unix/Linux systems to extract and display a list of all usernames from the /etc/passwd file. 
