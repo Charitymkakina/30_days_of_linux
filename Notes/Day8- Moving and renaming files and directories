@@ -1,0 +1,22 @@
+Rename a file- mv file1.txt newname.txt
+Move a file to a directory- mv newname.txt testdir/
+Rename a directory- mv testdir_copy new_testdir
+Move and rename in one command- mv testdir/newname.txt ./original_file1.txt
+verify: ls
+        ls testdir
+
+REMOVING FILES AND DIRECTORIES
+Removing a single file- rm original_file1.txt 
+verify using ls to confirm if original_file1 has been removed
+Removing interactively- rm -i file2.txt (-i) allows you to be prompted with y (yes) or n (no)for your confirmation before deleting
+Remove empty directory- rmdir new_testdir 
+Remove directory and its contents- rm -r testdir
+Force removal (to be used with extreme caution, as it can delete files permanently, even if they are write-protected): rm -rf /
+
+To demonstrate forceful deletion
+mkdir temp_dir
+touch temp_dir/temp_file.txt
+ls -R temp_dir
+Note: The capital R used here is referred to as recursive listing
+to forcefully remove: rm -rf temp_dir
+
