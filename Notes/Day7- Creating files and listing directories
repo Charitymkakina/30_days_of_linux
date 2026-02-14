@@ -1,0 +1,19 @@
+touch file1.txt- The touch command is used to create an empty file. If the file already exists, it updates the file's timestamp without changing its content
+echo "Learning Linux is fun!" > file2.txt - This command does 2 things: echo- prints text and > redirects the output of echo into a file named file2.txt.
+echo "Hidden file" > .hiddenfile - Creates a hidden file in Linux; any file or directory name that starts with a dot (.) is considered hidden
+mkdir testdir- Creates a new directory named testdir
+Running the ls command, you should see: file2.txt, file1.txt, testdir, together with other documents and files on your virtual machine 
+ls -l: (-l) is a lowercase L, it provides a "long" format listing. You see additional details like file permissions (drwr-xr-x), owner, size, and modification date
+ls -a  Shows all files, including the hidden file.
+ls -la  combines the long format (-l) with showing all files (-a)
+ls -l testdir shows the contents of the testdir directory; if no contents are displayed, then the directory is empty.
+
+COPYING FILES AND DIRECTORIES
+Copy a file- cp file1.txt file1_copy.txt
+Copy a file to another directory- cpfile2.txt testdir
+copy a directory- cp -r testdir testdir_copy (The -r stands for recursive, it's necessary when copying directories to ensure all contents are copied).
+to verify: ls
+           ls testdir
+           ls testdir_copy
+
+
