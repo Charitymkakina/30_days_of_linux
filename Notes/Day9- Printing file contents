@@ -1,0 +1,65 @@
+echo "Hi, I am labby!" > /tmp/hello
+cat /tmp/hello
+cat command displays the contents of the file
+Therefore, the output after running cat /tmp/hello is Hi, I am labby!
+
+PRINTING NEWLINE ESCAPE
+Method 1: using echo
+echo -e "Hi,\nI am labby!" > /tmp/hello
+cat /tmp/hello
+output: Hi,
+        I am labby!
+
+Method 2: using printf
+printf "Hi,\nI am labby!\n" > /tmp/hello
+
+Method 3: Using Nano
+bash: nano /tmp/hello
+type: Hi,
+      I am labby!
+save: ctrl+O then ENTER then crtl+x to exit
+
+Displaying the file contents with line numbers:
+command: cat -n /tmp/hello
+output: 1 Hi,
+        2 i am labby!
+head -n1 /tmp/hello the n1 option tells head to show only the first line
+output: Hi,
+
+View the first few bytes of a file:
+head -c1 /tmp/hello
+output: H
+
+Print the last lines of a file
+command: tail -n1 /tmp/hello
+output: i am labby!
+tail shows only the last line of a file.
+
+View the last few bytes of a file
+command: tail -c1 /tmp/hello
+Output: is an invisible newline character
+command: tail c2 /tmp/hello
+output: ! and a space 
+The -c2 shows the last 2 bytes of the file. In this case, it is an exclamation mark and an invisible character space
+
+Comparing files 
+We are going to use diff
+Creating a directory we are going to use it: mkdir -p ~/code
+echo "this is file1" > ~/Desktop/file1.txt
+echo "this is file2" > ~/code/file1.txt
+diff -r ~/Desktop ~/code
+Output:
+       1c1
+       <this is file1
+       ---
+       >this is file2
+Explanation:
+1c1 means line 1 of the file in the first directory is different from line 1 of the file in the second directory
+c stands for change
+<this is file1 means the content of line 1 in the first file in the desktop directory
+--- separator between the two versions
+>this is file2, the content of line 1 in the second file, which is in the code directory
+
+
+
+
