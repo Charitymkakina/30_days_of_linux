@@ -7,7 +7,7 @@ verify: ls
 
 REMOVING FILES AND DIRECTORIES
 Removing a single file- rm original_file1.txt 
-verify using ls to confirm if original_file1 has been removed
+Verify using ls to confirm if original_file1 has been removed
 Removing interactively- rm -i file2.txt (-i) allows you to be prompted with y (yes) or n (no)for your confirmation before deleting
 Remove empty directory- rmdir new_testdir 
 Remove directory and its contents- rm -r testdir
