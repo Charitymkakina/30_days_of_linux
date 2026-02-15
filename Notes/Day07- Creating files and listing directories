@@ -4,7 +4,7 @@ echo "Hidden file" > .hiddenfile - Creates a hidden file in Linux; any file or d
 mkdir testdir- Creates a new directory named testdir
 Running the ls command, you should see: file2.txt, file1.txt, testdir, together with other documents and files on your virtual machine 
 ls -l: (-l) is a lowercase L, it provides a "long" format listing. You see additional details like file permissions (drwr-xr-x), owner, size, and modification date
-ls -a  Shows all files, including the hidden file.
+ls -a  shows all files, including the hidden file.
 ls -la  combines the long format (-l) with showing all files (-a)
 ls -l testdir shows the contents of the testdir directory; if no contents are displayed, then the directory is empty.
 
