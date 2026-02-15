@@ -1,7 +1,7 @@
 Echo simply repeats whatever you tell it
 Command: echo "Learning Linux is fun."
 Output is: Learning Linux is fun
-NOTE: Linux is case sensitive echo, Echo and ECHO are all different
+NOTE: Linux is case sensitive. echo, Echo, and ECHO are all different
 
 To display the current user
 command: whoami
