@@ -1,1 +1,34 @@
+make directory: mkdir ~/project
+change directory: cd ~/project
+Creating a new file: touch example.txt
+Verifying the presence of the new file- ls
+
+Changing Ownership of a File
+Checking the current ownership of the file: 
+Command: ls -l
+Output: -rw-rw-r--1 charity charity 0 feb 16 16:01 example.txt
+Meaning: (-rw-rw-r--1) represents the file permissions
+         (1st charity) represents the current owner of the file
+         (2nd charity) represents the current group of the file.
+         (0) represents the file size in bytes.
+         (feb 16 16:01) represents the last modified date and time.
+To change the user and group, we create a user and group first, since they don't exist in my machine
+To create user: sudo useradd -g developer labby
+To create a group: sudo groupadd developer
+To change the ownership of a file: sudo chown labby:developer example.txt
+Verifying the changes: ls -l
+Output: -rw-rw-r--1 labby developer 0 feb 16 16:01 example.txt
+
+Changing Ownership of a Directory
+1. Create a new directory with some files
+command: mkdir -p new-dir/subdir
+         echo "Hello, world" > new-dir/file1.txt
+         echo "Another file" > new-dir/subdir/file2.txt
+Verify: ls -R new-dir
+Changing ownership:
+Create the user first: sudo useradd -g group1 user1
+Create the group: sudo groupadd group1
+changing ownership: sudo chown -R user1:group1 new-dir
+Verifying: ls -l new-dir
+
 
