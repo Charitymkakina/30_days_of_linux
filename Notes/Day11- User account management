@@ -1,1 +1,74 @@
+Creating a new user
+command: sudo useradd joker
+The sudo command gives you temporary superuser administrator privileges. If you run without using sudo, you get permission denied.
+verification: sudo grep -w 'joker' /etc/passwd
+Output: joker:x:1004:1004::/home/joker:/bin/sh
+Explanation:(joker)- is the new user we have added
+            (x)- password
+            (1004:1004)- the userid and the groupid
+            (/home/joker)- home directory
+            (/bin/bash)- the default shell
+
+Creating a user with home directory
+Command: sudo useradd -m bob
+(-m) tells the system to create a home directory for the user.
+Verify: sudo ls -ld /home/bob
+Output: drwxr-x--- 2 bob bob 4096 feb 17 17:16 /home/bob
+Explanation:(d)- the directory
+            (rwxr-x---) shows who can read, write, or execute in this directory
+            (4096)- size of the directory in bytes
+            (Feb 17 17:16)- when the directory was created
+
+Setting a user password
+Command: sudo passwd joker
+You will be prompted to enter the password
+Note:  Password will not be displayed as you type it; this is a security feature in Linux to prevent others from seeing your password as you type it
+Linux stores encrypted passwords in a secure file called /etc/shadow.
+
+Modifying user properties
+Command: sudo usermod -d /home/wayne joker
+(usermod)- modifies the user account settings
+(-d /home/wayne)- specifies the new home directory
+(joker)- the user we are modifying
+verification: sudo grep -w 'joker' /etc/passwd
+Output: joker:x:1004:1004::/home/wayne:/bin/bash
+
+Changing user shell
+Shell is a program that interprets and runs commands you type in the terminal. By default, the user "joker" is using /bin/bash as their shell,
+While sh (Bourne shell) is a basic shell that is present on most unix-like system. bash (Bourne Again Shell) offers more features and is generally
+more user-friendly
+Changing from shell to bash
+Command: sudo usermod -s /bin/bash joker
+Verification: sudo grep -w 'joker' /etc/passwd
+Output: joker:x:1004:1004::/home/wayne:/bin/bash
+
+Add a user to a group
+Linux uses groups to organise users and manage permissions
+Command: sudo usermod -aG sudo joker
+Verify: groups joker
+Output: joker: joker sudo
+To see the effect of the change: su - joker 
+Output: You will be logged in as joker
+Test: sudo cat /etc/shadow
+Type exit to log out as joker
+
+Locking and unlocking user accounts
+1. To lock a user account command: sudo passwd -l joker
+(-l) locks the account
+Test: su - joker
+You will be prompted for the Joker's password we created
+Output: Authentication failure. Meaning the account is successfully locked
+2. Unlocking the account
+command: sudo passwd -u joker
+Test: su - joker
+Prompted the Joker's password the you logged in as joker. Typee exit to logout
+
+Deleting a user
+1. Deleting Bob and the home directory:
+Command: sudo userdel -r bob
+Verification: sudo grep -w 'bob' /etc/passwd
+              sudo ls -ld /home/bob
+
+
+
 
