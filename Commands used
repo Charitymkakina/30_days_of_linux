@@ -1,3 +1,8 @@
+To check for identity use: whoami
+                           uname
+To display all system information: uname -a
+To check how long the system has been running and system upload: uname -a
+To start the monitoring interface: top
 man man - obtains detailed documentation about commands
 q- Exits the manual page
 mv- moves or renames files and directories
