@@ -1,0 +1,16 @@
+The Lay of The Land
+Required;
+Create a file named system_report.txt in your current directory (~/project). The file must
+contain the output of the whoami, uname-a (all system information), amd uptime commands
+Requirements:
+The final report file must be named system_report.txt.
+You must use output redirection operators (> and >>) to write the command outputs to the file.
+The file must be created in the ~/project directory.
+
+  Commands
+  Creating the ~/project directory: mkdir -p ~/project
+  Creating system_report.txt and adding the output of whoami: whoami > ~/project/system_report.txt
+  Append the output of uname -a: uname -a >> ~/project/system_report.txt
+  Append the output of uptime: uptime >> ~/project/system_report.txt
+  Verify the file: cat ~/project/system_report.txt
+  
