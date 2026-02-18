@@ -1,17 +1,27 @@
-sudo apt update
-sudo apt install --reinstall man-db groff
-sudo mandb
-man man
-pwd
-ls -a (Lists all files, whether hidden or not)
-clear
-mkdir
-cat learning notes_txt
-rmdir - removes directory if empty
-rmdir -p() - removes a directory that has contents inside
-nmap -sn <target-ip> checks if the target is alive, for example, nmap -sn 192.168.56.101
-nmap -sV <target-ip> service version detection
-nmap -sC -sV -O -p- <target-ip> full scan
-
-
+man man - obtains detailed documentation about commands
+q- Exits the manual page
+mv- moves or renames files and directories
+chmod- modifies the file permissions
+chown- changes the ownership of a file
+dd- copies data from input to output
+pwd- Displays the current working directory
+ps- list the processes that are currently running in the system
+su- simulates a login as another user or becomes a superuser
+sudo- Runs a command as a superuser by default or another named user
+grep- used to search for specific strings of characters within a file or other command output
+ifconfig- used to display or configure network card-related information
+apt-get- used to install, configure, and remove packages on Debian and its derivatives
+lwconfig- used to display and configure wireless network card related information
+shutdown- shuts down the virtual machine
+passwd- changes the password
+cat- lists the contents of a file
+ls- Displays the files inside a directory
+cd- changes the current directory
+mkdir- creates directories
+touch- creates text files
+cp- Copies files and directories from a source to a destination
+rm- removes files or directories
+cd ~ changes the directory to the home directory
+> represents redirection
+>> appends data to the end of the referred file, keeping the current content intact.
 
