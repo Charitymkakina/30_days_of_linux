@@ -1,0 +1,18 @@
+Your mission is to architect a clean, logical, and efficient file structure that will support the growing development team. 
+By creating proper directories, organizing files, securing backups, and cleaning up old data, you'll establish the foundation 
+that Project Phoenix needs to succeed.
+
+Tasks
+Navigate into the ~/project/phoenix_project directory.
+Create three new subdirectories: src for source code, config for configuration files, and docs for documentation.
+Requirements
+All new directories must be created inside the ~/project/phoenix_project directory.
+The directory names must be exactly src, config, and docs.
+You should use a single command to create all three directories simultaneously.
+
+Solution:
+pwd- To check the current directory
+Changing the directory: cd ~/project/phoenix_project directory
+mkdir src config docs
+Verify: ls -f
+
