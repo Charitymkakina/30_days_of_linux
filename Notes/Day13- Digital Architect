@@ -16,3 +16,61 @@ Changing the directory: cd ~/project/phoenix_project directory
 mkdir src config docs
 Verify: ls -f
 
+Tasks
+Move the main_app.py file into the src directory.
+Move the config.json file into the config directory.
+Move the README.md file into the docs directory.
+Requirements
+Ensure you are in the ~/project/phoenix_project directory before performing the move operations.
+Use the mv command to relocate each file.
+
+Solution
+cd ~/project/phoenix_project directory
+mv main_app.py src/
+mv config.json config/
+mv README.md docs/
+
+Tasks
+Create a backup copy of the config.json file.
+Requirements
+The backup file must be created within the ~/project/phoenix_project/config/ directory.
+The backup file must be named exactly config.json.bak.
+
+Solution:
+cp config/config.json config/config.json.bak
+cd ~/project/phoenix_project directory/config
+ls 
+output: config.json config.json.bak
+
+Tasks
+Move the entire shared_docs directory and all of its contents into the ~/project/phoenix_project/docs/ directory.
+Requirements
+The source directory is ~/project/shared_docs.
+The destination path is ~/project/phoenix_project/docs/.
+The entire directory, not just its contents, must be moved.
+
+Solution
+mv ~/project/shared_docs ~/project/phoenix_project/docs
+cd ~/project/phoenix_project/docs
+ls
+Output: README.md shared_docs
+
+Tasks
+Navigate to the ~/project/logs directory.
+Create a compressed tar archive named old_logs.tar.gz that contains all log files from the year 2023.
+After the archive is successfully created, delete the original 2023 log files that you just archived.
+Requirements
+The final archive must be named exactly old_logs.tar.gz.
+The archive must be located in the ~/project/logs directory.
+Only log files with 2023 in their name should be archived and subsequently removed.
+The log file from 2024 (app_2024-05-01.log) must not be included in the archive and must not be deleted.
+
+Solution:
+1. Navigate to the logs directory: cd ~/project/logs
+2. Create the compressed archive with only 2023 log files: tar -czvf old_logs.tar.gz *2023*.log
+3. After confirming the archive is created, delete the original 2023 logs: rm *2023*.log
+
+Use the tar command to create archives. The options -czf are a powerful combination: c (create), z (compress with gzip), and f (specify filename).
+You can use a wildcard (*) to select multiple files that match a pattern. For example, *_2023-*.log will match all files that end with .log and have _2023- in their name.
+The rm command is used to remove (delete) files. Be careful when using it with wildcards!
+
