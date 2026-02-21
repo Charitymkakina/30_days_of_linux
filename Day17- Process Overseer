@@ -1,0 +1,23 @@
+Your mission is to dive into the server's command line, diagnose the issue by inspecting the running processes, 
+neutralize any resource-hogging culprits, and ensure essential services remain operational. By the end of this 
+challenge, you'll have proven your ability to manage a live Linux environment under pressure, a core skill for 
+any system administrator.
+
+Solution:
+ps aux
+ps -ef --forest
+top
+sudo apt install htop
+htop
+yes > /dev/null &
+top
+jobs
+renice 10 <PID>
+kill <PID>
+kill -9 <PID>
+sleep 300
+CTRL + Z
+jobs
+bg
+fg
+
