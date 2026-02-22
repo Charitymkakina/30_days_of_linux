@@ -1,0 +1,12 @@
+Your mission is to systematically investigate the server's network status, identify the root cause, 
+and restore connectivity. Let's get this server back online!
+
+Solution:
+ip a
+sudo ip link set <interface> up
+sudo ip link set ens33 up
+ip addr show
+sudo dhclient <interface>
+ip route
+sudo ip route add default via <gateway_ip>
+ping 127.0.0.1
