@@ -1,0 +1,18 @@
+Your mission is to establish order. You'll need to update the system's software sources, 
+install essential tools requested by the team, verify that everything is correctly installed, remove obsolete software, 
+and perform a general cleanup. This is your opportunity to demonstrate your value and bring professional-grade stability 
+and efficiency to the company's infrastructure. The team is counting on you. Let's get this server in shape!
+
+Solution
+Update the Software- sudo apt update
+Inspect the sources- sudo apt upgrade -y
+Full system upgrade- sudo apt full-upgrade -y
+Install essential tools- sudo apt install curl wget git net-tools htop unzip -y
+Verify installation- dpkg -l | grep curl
+Remove obsolete software- sudo apt remove <package_name>
+Remove config files- sudo apt purge <package_name>
+Remove unused dependencies- sudo apt autoremove -y
+Free disk space- sudo apt clean
+Check system health- df -h
+Check running services- systemctl list-units --type=service --state=running
+
