@@ -31,10 +31,12 @@ Step 5: Test Recovery
 sudo mkdir /restore_test
 sudo tar -xzvf /backup/server_backup_2026-02-23.tar.gz -C /restore_test
 Verify ls /restore_test
+check backup disk usage- df -h
 
 Step 6: Automate Backup with Cron
 sudo crontab -e
 Daily backup at 2 AM: 02 * * * tar -czf /backup/server_backup_$(date +\%F).tar.gz /home /etc /var/www /var/log
 Check cron: sudo crontab -l
 Prevent backup overload: 03 * * * find /backup -type f -mtime +7 -delete (deletes backups older than 7 days)
+
 
