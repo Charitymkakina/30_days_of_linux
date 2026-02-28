@@ -1,1 +1,26 @@
+To understand web-based vulnerabilities by performing manual attacks on the Damn Vulnerable Web App (DVWA) hosted on Metasploitable 2, using Burp Suite as an interception proxy.
+Lab Environment
+-Attacker Machine: Kali Linux
+-Target Machine: Metasploitable 2 (192.168.56.101)
+-Tools Used: Burp Suite Community Edition: For intercepting and modifying HTTP traffic.
+             DVWA Set to "Low" security for initial exploitation practice.
 
+Walkthrough & Methodology
+1. Setup & Interception- started by launching Burp Suite and using its built-in browser to navigate to the DVWA portal. I ensured the (Intercept) was toggled (ON) to catch traffic before it reached the server.
+2. Command Injection Attack
+The core of today's lab was exploiting the (Command Execution) module.
+-Vulnerability: The application takes user input (an IP) and passes it directly to a shell command (ping) without filtering.
+-The Payload: By using the (;) operator, I chained a second command to the input.
+-Input: 127.0.0.1; whoami
+-Result: The server executed the ping and then revealed the system user identity (www-data).
+
+Key Lessons Learned
+1. Input Validation: Learned that "Low" security levels in web apps often lack basic sanitization, allowing OS commands to be "injected" via web forms.
+2. Man-in-the-Middle (MitM): Used Burp Suite to act as a proxy, demonstrating how an attacker can view and change data (like passwords or IP parameters) after it leaves the browser but before it hits the server.
+3. Command Chaining: Practiced using Linux operators like (;)and (&&) to manipulate server-side behavior.
+
+How to Run this Lab
+1. Power on Metasploitable 2 and Kali Linux in VirtualBox (Host-Only Network).
+2. Open Burp Suite on Kali.
+3. Visit http://[Target's IP]/dvwa in the Burp browser.
+4. Set DVWA Security to (Low) and select the (Command Execution) tab.
