@@ -18,7 +18,7 @@ This revealed that ports `80` and `8080` were open.
 
 # Web Enumeration
 Accessing the target via a browser confirmed that a web server was running:
-on `Firefox Google: http://192.168.56.106`
+on `Firefox google http://192.168.56.106`
 Further enumeration using directory brute forcing revealed the presence of the `pChart 2.1.3` application.
 A directory traversal vulnerability was identified using the following payload: /examples/index.php?Action=View&Script=../../etc/passwd
 This allowed access to sensitive system files and confirmed that the target was running `FreeBSD 9.0.`
