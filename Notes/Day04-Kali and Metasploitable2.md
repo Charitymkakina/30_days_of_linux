@@ -1,85 +1,118 @@
-Kali Linux & Metasploitable 2 Virtual Lab Setup
+# Kali Linux & Metasploitable2 Lab Setup
+This lab demonstrates the deployment of a cybersecurity testing environment using:
 
-This lab demonstrates the deployment of a cybersecurity testing environment using Kali Linux (Attacker Machine) and Metasploitable 2 (Vulnerable Victim Machine) inside Oracle VirtualBox.
-Tools Used: VirtualBox, Kali Linux, Metasploitable 2, Nmap, Metasploit
+Kali Linux (Attacker Machine)
+Metasploitable 2 (Vulnerable Target Machine)
 
-Kali Linux Configuration
+Both machines are configured inside VirtualBox for safe, isolated practice.
+
+# Tools Used
+1. VirtualBox
+2. Kali Linux
+3. Metasploitable 2
+4. Nmap
+5. Metasploit
+
+# Kali Linux Configuration
 OS: Linux
+
 Version: Debian
+
 RAM: 2GB
+
 CPU: 2 Cores
-Network 1 adapter: NAT
+
+Network 1 adapter: NAT (For Internet connectivity)
+
 Network 2 adapter: Host-only
+
 video memory:128mb
 
-Metasploitable 2 Configuration
+# Metasploitable 2 Configuration
+
 OS: Linux
+
 OS Distribution: Debian
+
 Version: Debian 32-bit
-RAM: 1GB (Metasploitable is lightweight)
+
+RAM: 1GB
+
 CPU: 1 Core
+
 Network: Host only Adapter
 
-Step 1 — Download Metasploitable 2
+# Step 1 — Download Metasploitable 2
 Download from Offensive Security: Metasploitable 2 VirtualBox image (ZIP)
+
 Extract to obtain: Metasploitable.vmdk
 
-Step 2 — Create Metasploitable VM
+# Step 2 — Create Metasploitable VM
 1. Open VirtualBox
 2. Click New
 3. Configure:
--Name: Metasploitable 2
--Type: Linux
--Distribution: Debian
--Version: 32‑bit
+ Name: Metasploitable 2
+
+Type: Linux
+
+Distribution: Debian
+
+Version: 32‑bit
+
 4. Allocate RAM → 512–1024 MB
+   
 5. Choose: Use the existing virtual hard disk file
+   
 6. Select Metasploitable.vmdk.
+   
 7. Finish setup
 
-Step 3 — Configure Network
+# Step 3 — Configure Network
 Kali Linux
+
 Adapter 1 → NAT
+
 Adapter 2 → Host‑Only Adapter
 
 Metasploitable
+
 Adapter 1 → Host‑Only Adapter
 
-Step 4 — Start Metasploitable 2
+# Step 4 — Start Metasploitable 2
 Boot the VM.
+
 Login credentials:
+
 username: msfadmin
+
 password: msfadmin
 
-Step 5 — Obtain Victim IP
+# Step 5 — Obtain Victim IP
 Inside Metasploitable run: ifconfig
+
 Example output: inet: 192.168.56.101- This is the target IP.
 
-Step 6 — Test Connectivity
+# Step 6 — Test Connectivity
 From Kali: bash ping 192.168.56.101
+
 Stop ping: Ctrl + C
-Step 7 — Network Discovery
+
+# Step 7 — Network Discovery
 bash- nmap -sn 192.168.56.0/24
 
-Step 8 — Service Enumeration
+# Step 8 — Service Enumeration
 bash- nmap -sV 192.168.56.101
-This reveals vulnerable services such as:
-* FTP
-* SSH
-* Telnet
-* SMB
-* Apache Web Server
-* MySQL
 
-Step 9 — Access Vulnerable Web Apps
+This reveals vulnerable services such as: `FTP`, `SSH`
+
+# Step 9 — Access Vulnerable Web Apps
 Open in Kali browser: http://192.168.56.101
-Common applications:
-* DVWA
-* Mutillidae
-* phpMyAdmin
-* TWiki
 
-Safety Notice
+Common applications: `DVWA`, `phpMyAdmin.`
+
+# Safety Notice
 This lab is intentionally vulnerable.
+
 Do NOT expose Metasploitable to the public internet.
+
 Use Host‑Only networking only for safe practice.
