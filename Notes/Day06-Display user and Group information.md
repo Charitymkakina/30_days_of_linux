@@ -1,0 +1,55 @@
+# Echo Command
+`echo` used to display text in the terminal.
+
+Echo simply repeats whatever you tell it
+
+Command: `echo "Learning Linux is fun."`
+
+Output is: `Learning Linux is fun.`
+
+NOTE: Linux is case sensitive. echo, Echo, and ECHO are all different
+
+# Display the current user
+To display the current user, use the command: `whoami.`
+
+This prints the effective username of the current user.
+
+# Displaying user and group information
+In Linux, users are organized into groups. These groups determine the permissions and access rights a user has
+Run: `id`
+
+The command id outputs: `uid`- This is the userid, `gid`- Your primary groupid, and groups- All the groups you are a member of
+
+Run: `id root.`
+
+The command enables the root, who is the superuser, like the administrator of a system, to look up other users
+
+The command `id -un` prints only your username. The name for your current UID
+
+# File Operations
+In Linux, each user typically has a home directory represented by a `~`
+
+`pwd` - shows your current location. (Print working directory)
+
+`echo ~`: Displays the path to your home directory
+
+`ls`- Shows the content of your current directory by listing files and directories
+
+`ls ~`: Checks the contents of your home directory
+
+# Navigating the file system
+Linux uses a hierarchical file system. 
+
+Think of it like a tree with branches. The stem(trunk) is called the "root directory" that is represented by a single forward slash (/).
+All other directories and files branch out from this root.
+
+ NOTE: This command:`cd /home/charity` gets you back to the starting point (/home/charity). This is my path in my VirtualBox.)
+ 
+`cd ..` moves up one level to the parent directory. (..) means the "directory above."
+
+cd charity (this is my path to my Ubuntu terminal in my virtualbox) returns to your project directory.
+
+`cd ~` takes you to your home directory.
+
+`Absolute path- It starts from the root (/) and gives the full location. In my case its (cd /home/charity)`
+
