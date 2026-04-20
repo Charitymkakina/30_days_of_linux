@@ -1,6 +1,6 @@
 # Linux Manual Privilege Escalation Guide
 
-Enumeration Methodology
+# Enumeration Methodology
 
 checking current user- whoami
 
